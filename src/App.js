@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext } from 'react';
+import ComponentB from './ComponentB';
+
+export const SampleConext = createContext()
 
 function App() {
+  const text = "Text from ComponentA"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <SampleConext.Provider value={text}>
+        <h1>Here is A.</h1>
+        <ComponentB />
+      </SampleConext.Provider>
   );
 }
 
